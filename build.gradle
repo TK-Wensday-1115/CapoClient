@@ -12,6 +12,7 @@ allprojects {
         flatDir {
             dirs 'lib'
         }
+        maven { url "https://jitpack.io" }
     }
 }
 
@@ -19,4 +20,5 @@ jar.dependsOn shadowJar
 
 dependencies {
     compile fileTree(dir: 'lib', include: '*.jar')
+    compile 'com.github.TK-Wensday-1115:Communications:master-SNAPSHOT'
 }
