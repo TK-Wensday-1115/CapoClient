@@ -4,9 +4,17 @@ import pl.edu.agh.amber.roboclaw.RoboclawProxy;
 import pl.edu.agh.student.smialek.tk.communications.client.CommunicationsClient;
 
 import java.io.IOException;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.TimerTask;
 
 public class RoboclawTask extends TimerTask {
+    private static final DateTimeFormatter dateFormatter = DateTimeFormatter
+            .ofLocalizedTime(FormatStyle.LONG)
+            .withZone(ZoneId.systemDefault());
+
     private final CommunicationsClient clientFL;
     private final CommunicationsClient clientFR;
     private final CommunicationsClient clientRL;
@@ -45,6 +53,6 @@ public class RoboclawTask extends TimerTask {
         clientFR.sendUpdate(String.valueOf(motorsSpeed.getFrontRightSpeed()), "#0088ff");
         clientRL.sendUpdate(String.valueOf(motorsSpeed.getRearLeftSpeed()), "#ff2200");
         clientRR.sendUpdate(String.valueOf(motorsSpeed.getRearRightSpeed()), "#0022ff");
-        System.out.println("Update sent");
+        System.out.println("Update sent " + dateFormatter.format(Instant.now()));
     }
 }

@@ -32,6 +32,6 @@ public class ClientApp {
         }
         TimerTask roboclawTask = new RoboclawTask(amberIp, serverIp, port);
         Timer timer = new Timer(true);
-        timer.schedule(roboclawTask, 0, 250);
+        timer.schedule(roboclawTask, 0, 750);
     }
 }
