@@ -30,8 +30,8 @@ public class ClientApp {
         } else {
             amberIp = input;
         }
-        TimerTask roboclawTask = new RoboclawTask(amberIp, serverIp, port);
+        TimerTask sendUpdateTask = new SendUpdateTask(amberIp, serverIp, port);
         Timer timer = new Timer(true);
-        timer.schedule(roboclawTask, 0, 750);
+        timer.schedule(sendUpdateTask, 0, 1000);
     }
 }
