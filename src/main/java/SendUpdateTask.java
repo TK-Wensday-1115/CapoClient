@@ -99,7 +99,7 @@ public class SendUpdateTask extends TimerTask {
             return "";
         }
 
-        List<String> mapPoints = new ArrayList<>(list.size());
+        List<String> mapPoints = new ArrayList<String>(list.size());
         for (MapPoint point : list) {
             mapPoints.add(mapPointString(point));
         }
